@@ -236,16 +236,17 @@ Which leads us back to the Riemann conclusion. At this point, the question is ca
 \[
 \epsilon_0(x) = \min\left(\left|(1+c)*S^*_{w}(x) - S(x)\right|, \left|\sup_{\tilde{x}\in B_w(x)}S(\tilde{x}) - S(x)\right|\right)
 \]
-It should be clear at least with this choice of bounding, $f(t)$ cannot be recovered exactly.
+It should be clear at least with this choice of bounding, $f(t)$ cannot be recovered exactly. However, for certain classes of functions, we can approximate $f$ very closely. A further question of importance is given a certain type of function, is it possible to significantly improve the bound, i.e. given a first-order ODE, is it possible to be within only an epsilon range of $f$? 
 \newpage
 \section{Conclusion}
-We do not have the ability to recreate $f$ with this formulation, however we may be able to get close for certain functions, especially simple functions. This process was implemented in MATLAB(\texttrademark) on an experiment involving temperature measurements of a thermocouple being moved from one environment to another:
+We do not have the ability to recreate $f$ with this formulation, however we may be able to get close for certain functions, especially simple functions. This process was implemented in MATLAB(\texttrademark) on an experiment involving temperature measurements of a thermocouple being moved from one environment to another \cite{engr_132}:
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=2.0in]{/Users/noahstockwell/Documents/TeX/Proj544/Images/Comparison.png}
 	\caption{Thermocouple response: Noisy and Convolved}
 \end{figure}
-Figure 2 demonstrates the potential of a well-tuned convolution in denoising signals for Engineering analysis. More work should be done to better identify the constant $c$ and if superior bounding methods exist.
+Figure 2 demonstrates the potential of a well-tuned convolution in denoising signals for Engineering analysis. It is clear that a correct choice of parameters allows for a close interpretation of the signal. For the mathematical question of how far away is the convolution, more work should be done to better identify the constant $c$ and if superior bounding methods exist. Furthermore, it may be of interest to study only certain classes of functions, as we are modeling real-world processes and we should expect a process to be near a simple PDE, for example. \\
+A potential method to attempt to analyze $S$ in the future could be trying to interpret $f+\eta^+$ and $f-\eta^-$ because these functions would appear to be a sawtooth-wave style upon a smooth function. It could then be possible to use the property that the sawtooth frequency and amplitude should be equal in the time domain to reduce the error in the approximation to $f$.
 \newpage
 \bibliography{bibFile}
 \bibliographystyle{plain}
